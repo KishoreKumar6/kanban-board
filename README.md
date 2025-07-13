@@ -39,7 +39,7 @@ Add a .env file:
 PORT=5000
 MONGO_URI=<your_mongo_connection_string>
 JWT_SECRET=<your_jwt_secret>
-Run with npm start or nodemon
+Run with node server.js
 
 🌐 Frontend
 Navigate to /kanban-board
@@ -50,9 +50,10 @@ Start with npm run dev (or npm start if configured)
 
 📁 Folder Structure
 bash
-kanban-board src pages - Dashboard - Login - Register, components - Column - TaskCard - Modals utils - API endpoints - helpers
+kanban-board: pages - Dashboard, Login, Register, AddTask, Column, EditTask, Home, TaskCard 
 
-kanban-server routes - tasks.js - columns.js - auth.js, models - Task - Column - User middleware - auth middleware app.js
+
+kanban-server: models - Column, Task, User.. routes - authRoutes, ColunRoutes, task.. Server.js
 
 🛡️ Authentication
 User login stored in localStorage via JWT
