@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+🧭 Kanban TaskBoard 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Deployment URL: https://kanbanboard-five-zeta.vercel.app/
 
-## Available Scripts
+A sleek and responsive task management dashboard built with React, Express, and MongoDB, featuring drag-and-drop organization, persistent dark mode, editable task columns, and secure JWT-based authentication.
+🚀 Features
+🎯 Drag-and-drop task cards across customizable columns
 
-In the project directory, you can run:
+🌙 Light / Dark mode toggle with persistence
 
-### `npm start`
+🔐 Authenticated access via JWT (Login required)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+✏️ Edit & delete columns with cascading task updates
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+📋 Task details: title, description, assignee, due date, label, priority
 
-### `npm test`
+🔍 Real-time search by task title
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🧱 Modular structure using React components
 
-### `npm run build`
+🍃 RESTful backend with MongoDB + Mongoose
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🧱 Tech Stack
+ReactJS	Node.js	MongoDB
+TailwindCSS	Express.js	Mongoose
+React DnD	JWT Auth	
+React Toastify	REST API	
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+📦 Setup Instructions
+🔧 Backend
+Clone the repo and navigate to /kanban-server
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Run npm install
 
-### `npm run eject`
+Add a .env file:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+PORT=5000
+MONGO_URI=<your_mongo_connection_string>
+JWT_SECRET=<your_jwt_secret>
+Run with npm start or nodemon
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+🌐 Frontend
+Navigate to /kanban-board
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Run npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Start with npm run dev (or npm start if configured)
 
-## Learn More
+📁 Folder Structure
+bash
+kanban-board src pages - Dashboard - Login - Register, components - Column - TaskCard - Modals utils - API endpoints - helpers
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+kanban-server routes - tasks.js - columns.js - auth.js, models - Task - Column - User middleware - auth middleware app.js
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+🛡️ Authentication
+User login stored in localStorage via JWT
 
-### Code Splitting
+Protected dashboard routes using token check
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Automatically redirects to login on invalid token
 
-### Analyzing the Bundle Size
+🗃️ API Endpoints
+Columns
+GET /api/columns
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+POST /api/columns
 
-### Making a Progressive Web App
+PUT /api/columns/:oldName
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+DELETE /api/columns/:name
 
-### Advanced Configuration
+Tasks
+GET /api/tasks
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+POST /api/tasks
 
-### Deployment
+PUT /api/tasks/:id
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+DELETE /api/tasks/:id
 
-### `npm run build` fails to minify
+💡 Customization Ideas
+✅ Add user roles and team assignments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+📊 Add statistics or analytics sidebar
+
+🔄 Add auto-refresh or polling
+
+📅 Calendar or timeline view
+
+📝 License
+MIT — Feel free to use and modify.
